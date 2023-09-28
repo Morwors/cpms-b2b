@@ -1,0 +1,16 @@
+.remoteOutlineButton{
+    width: 157px;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    color: #8B8B8B;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.remoteOutlineButtonActive{
+    border: 1px solid #1E4CDC;
+    color: #1E4CDC;
+}

@@ -1,0 +1,53 @@
+.bankHeader{
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 39px;
+    letter-spacing: 0em;
+    /*text-align: left;*/
+    color: #021F0E;
+}
+.bankLabel{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: #021F0E;
+}
+.bankInput{
+    border: 1px solid #D9D9D9;
+    padding: 10px 5px 10px 5px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: #828282;
+    /*width: fit-content;*/
+}
+.bankInput:disabled{
+    color:#000000;
+    font-weight: 500;
+    font-size: 16px;
+    border: 0;
+    background: white;
+}
+.bankButtonPrimary{
+    background: #1E4CDC;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+}
+.bankButtonSecondary{
+    color: #1E4CDC;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #1E4CDC;
+    width: 200px;
+    height: 50px;
+}

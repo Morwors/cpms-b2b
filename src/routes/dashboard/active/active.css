@@ -1,0 +1,59 @@
+h3{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #021F0E;
+
+}
+.currentActiveSessions{
+    color: #1E4CDC;
+    font-family: Inter;
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.avgTable th{
+    background: #333333;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 15px;
+    white-space: nowrap;
+}
+.avgTable td{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #021F0E;
+    padding: 15px;
+}
+.avgTable td:nth-child(2n){
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #8B8B8B;
+    padding: 15px;
+}
+.avgTable{
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+}
+.avgTable tr:nth-child(2n-1){
+    background: #F9F9F9;
+    /*background-color: red;*/
+}

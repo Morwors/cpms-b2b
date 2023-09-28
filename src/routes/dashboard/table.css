@@ -1,0 +1,86 @@
+h3{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #021F0E;
+}
+
+th{
+    background: #333333;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: white;
+    padding: 15px;
+    white-space: nowrap;
+}
+td{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #333333;
+    padding: 15px;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+tr:nth-child(2n-1){
+    background: #F9F9F9;
+    /*background-color: red;*/
+}
+.expandButton{
+    background-color: #1E4CDC;
+    padding: 15px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+}
+.searchInput{
+    background: #F6F6F6;
+    border-radius: 16px;
+}
+select{
+    background: rgba(51, 46, 60, 0.04);
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+}
+select:focus{
+    border: none;
+    outline:none;
+}
+span{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    white-space: nowrap;
+
+    /* darg green */
+
+    color: #021F0E;
+}
+.selectedRow{
+    background: #F5F8FB !important;
+}
+.selectedRow td{
+    color: #1E4CDC !important;
+}
