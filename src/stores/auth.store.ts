@@ -2,6 +2,7 @@ import {get, writable} from "svelte/store";
 import type {Writable} from 'svelte/store'
 import type {IUser} from "../interfaces/IUser";
 import {goto} from "$app/navigation";
+import {PUBLIC_BASE_URL} from "$env/static/public";
 
 export const jwt = writable("");
 export const user: Writable<IUser | null> = writable(null);
@@ -9,7 +10,7 @@ export const user: Writable<IUser | null> = writable(null);
 
 export const loginHandler = async (data: FormData) => {
     try {
-        const response = await fetch('http://localhost:5284/api/auth/login', {
+        const response = await fetch(`${PUBLIC_BASE_URL}api/auth/login`, {
             method: 'POST',
             body: data,
             headers: {
@@ -32,7 +33,7 @@ export const createAdminHandler = async (data: string) => {
         let jwtString: string | null = get(jwt)
         if (!jwtString) jwtString = localStorage.getItem("jwt");
         if (!jwtString) return false;
-        const response = await fetch('http://localhost:5284/api/auth/registerAdmin', {
+        const response = await fetch(`${PUBLIC_BASE_URL}api/auth/registerAdmin`, {
             method: 'POST',
             body: data,
             headers: {
@@ -63,7 +64,7 @@ export const meHandler = async () => {
         };
 
         // @ts-ignore
-        const response = await fetch("http://localhost:5284/api/auth/me", requestOptions);
+        const response = await fetch(`${PUBLIC_BASE_URL}api/auth/me`, requestOptions);
         // if(response.status)
         const userData = await response.json();
         if (!userData) return false;

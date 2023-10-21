@@ -2,6 +2,7 @@ import type {Writable} from "svelte/store";
 import type {ISessionHistory} from "../interfaces/ISession";
 import {get, writable} from "svelte/store";
 import {delay} from "../helpers/time.helper";
+import {PUBLIC_BASE_URL} from "$env/static/public";
 
 export const histories: Writable<ISessionHistory[]> = writable([])
 export const historyActive = writable(false)
@@ -17,7 +18,7 @@ export const handleHistorySearchSessions = async (text: string) => {
         } else {
             historySearchActive.set(true)
         }
-        const response = await fetch('http://localhost:5284/api/sessions/searchhistory?keyword=' + text,
+        const response = await fetch(`${PUBLIC_BASE_URL}api/sessions/searchhistory?keyword=` + text,
             {method: "GET",}
         );
         const data = await response.json();
@@ -29,7 +30,7 @@ export const handleHistorySearchSessions = async (text: string) => {
 }
 const handleGetHistorySessions = async () => {
     try {
-        const response = await fetch('http://localhost:5284/api/sessions/finished',
+        const response = await fetch(`${PUBLIC_BASE_URL}api/sessions/finished`,
             {method: "GET"}
         );
         const data = await response.json();

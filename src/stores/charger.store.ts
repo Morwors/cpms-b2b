@@ -3,12 +3,13 @@ import {get, writable} from "svelte/store";
 import {delay} from "../helpers/time.helper";
 import type {ICharger} from "../interfaces/ICharger";
 import {jwt, user} from "./auth.store";
+import {PUBLIC_BASE_URL} from "$env/static/public";
 
 export const chargers: Writable<ICharger[]> = writable([])
 export const chargersActive = writable(false)
 const handleGetChargers = async () => {
     try {
-        const response = await fetch('http://localhost:5284/api/chargers',
+        const response = await fetch(`${PUBLIC_BASE_URL}api/chargers`,
             {method: "GET"}
         );
         const data = await response.json();
@@ -54,7 +55,7 @@ export const handleAddCharger = async (obj: any) => {
         }
         const json = JSON.stringify(charger);
 
-        const response = await fetch('http://localhost:5284/api/chargers',
+        const response = await fetch(`${PUBLIC_BASE_URL}api/chargers`,
             {
                 method: "POST",
                 body: json,

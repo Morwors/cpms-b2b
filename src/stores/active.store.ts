@@ -3,6 +3,7 @@ import type {ISessionActive} from "../interfaces/ISession";
 import {get, writable} from "svelte/store";
 import {delay} from "../helpers/time.helper";
 import {createPaginationData} from "../helpers/data.helper";
+import {PUBLIC_BASE_URL} from '$env/static/public'
 
 export const activePage: Writable<number> = writable(1)
 export const activePerPage = writable(10);
@@ -11,7 +12,7 @@ export const actives: Writable<ISessionActive[]> = writable([])
 export const activesActive = writable(false)
 const handleGetActiveSessions = async () => {
     try {
-        const response = await fetch('http://localhost:5284/api/sessions/active',
+        const response = await fetch(`${PUBLIC_BASE_URL}api/sessions/active`,
             {method: "GET"}
         );
         const data = await response.json();

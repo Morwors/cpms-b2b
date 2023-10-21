@@ -3,6 +3,7 @@ import type {Writable} from 'svelte/store'
 import {delay} from "../helpers/time.helper";
 import type {ICompany} from "../interfaces/ICompany";
 import {jwt} from "./auth.store";
+import {PUBLIC_BASE_URL} from "$env/static/public";
 
 export const companies: Writable<ICompany[]> = writable([])
 export const companiesActive = writable(false)
@@ -12,7 +13,7 @@ const handleGetCompanies = async () => {
         let jwtString: string | null = get(jwt)
         if (!jwtString) jwtString = localStorage.getItem("jwt");
         if (!jwtString) return false;
-        const response = await fetch('http://localhost:5284/api/companies',
+        const response = await fetch(`${PUBLIC_BASE_URL}api/companies`,
             {
                 method: "GET", headers: {
                     "Authorization": "Bearer " + jwtString
@@ -43,7 +44,7 @@ export const handleCreateCompany = async (data: string) => {
         let jwtString: string | null = get(jwt)
         if (!jwtString) jwtString = localStorage.getItem("jwt");
         if (!jwtString) return false;
-        const response = await fetch('http://localhost:5284/api/companies', {
+        const response = await fetch(`${PUBLIC_BASE_URL}api/companies`, {
             method: 'POST',
             body: data,
             headers: {
